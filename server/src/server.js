@@ -19,7 +19,7 @@ const PORT = process.env.PORT || 10000;
 // Middleware - CORS Configuration
 app.use(
     cors({
-        origin: "https://canteen-management-system-frontend.onrender.com",
+        origin: "https://canteen-management-system-frontend-k4rx.onrender.com",
         credentials: true,
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
