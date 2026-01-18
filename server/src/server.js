@@ -14,6 +14,9 @@ app.get("/", (req, res) => {
     res.status(200).send("Canteen Backend is Live 🚀");
 });
 
+// TRUST PROXY (Required for Render/Heroku to force HTTPS)
+app.set('trust proxy', 1);
+
 const PORT = process.env.PORT || 10000;
 
 // Middleware - CORS Configuration
