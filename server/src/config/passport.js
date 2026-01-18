@@ -15,7 +15,8 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
     passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: process.env.GOOGLE_CALLBACK_URL || '/api/auth/google/callback',
+        // FORCE ABSOLUTE URL TO PREVENT MISMATCH
+        callbackURL: process.env.GOOGLE_CALLBACK_URL || 'https://canteen-management-system-2-b9q6.onrender.com/api/auth/google/callback',
         proxy: true // Force HTTPS callback generation
     },
         async (accessToken, refreshToken, profile, done) => {
