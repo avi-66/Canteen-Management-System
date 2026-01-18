@@ -7,7 +7,7 @@ import api from '../services/api';
 const Login = () => {
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
-    const { login, isAuthenticated } = useAuth();
+    const { login, isAuthenticated, user, loading } = useAuth();
 
     // UI State
     const [isRegistering, setIsRegistering] = useState(false);
@@ -25,18 +25,23 @@ const Login = () => {
     const token = searchParams.get('token');
 
     useEffect(() => {
-        if (isAuthenticated) {
-            navigate('/home');
+        if (isAuthenticated && !loading && user) {
+            if (user.role === 'SHOP_ADMIN') {
+                navigate('/admin');
+            } else if (user.role === 'SUPER_ADMIN') {
+                navigate('/superadmin');
+            } else {
+                navigate('/home');
+            }
         }
-    }, [isAuthenticated, navigate]);
+    }, [isAuthenticated, loading, user, navigate]);
 
     useEffect(() => {
         if (token) {
             login(token);
             window.history.replaceState({}, document.title, window.location.pathname);
-            navigate('/home');
         }
-    }, [token, login, navigate]);
+    }, [token, login]);
 
     useEffect(() => {
         if (urlError === 'auth_failed') {
@@ -70,7 +75,6 @@ const Login = () => {
 
             if (response.data.success) {
                 login(response.data.token);
-                navigate('/home');
             }
         } catch (error) {
             console.error('Authentication Error:', error);
