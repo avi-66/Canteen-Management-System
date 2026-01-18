@@ -8,7 +8,13 @@ const path = require('path');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+
+// ✅ SAFE ROOT ROUTE (FIRST) - Before any risky middleware
+app.get("/", (req, res) => {
+    res.status(200).send("Canteen Backend is Live 🚀");
+});
+
+const PORT = process.env.PORT || 10000;
 
 // Middleware
 app.use(cors({
@@ -68,17 +74,16 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-// Error handling middleware
+// Error handling middleware (MUST BE LAST)
 app.use((err, req, res, next) => {
-    console.error(err.stack);
+    console.error("🔥 ERROR:", err);
     res.status(500).json({
         success: false,
-        message: 'Internal Server Error',
-        error: process.env.NODE_ENV === 'development' ? err.message : undefined
+        message: err.message || "Internal Server Error",
     });
 });
 
 // Start Server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server running on port ${PORT}`);
 });
