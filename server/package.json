@@ -2,10 +2,10 @@
   "name": "canteen-server",
   "version": "1.0.0",
   "description": "Backend for Canteen Management System",
-  "main": "src/server.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
