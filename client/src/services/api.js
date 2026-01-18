@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
     baseURL: import.meta.env.VITE_API_BASE_URL || '/api',
+    withCredentials: true, // IMPORTANT: Required when backend uses credentials: true
 });
 
 // Request Interceptor: Attach token

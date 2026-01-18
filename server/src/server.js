@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 10000;
 
-// Middleware
+// Middleware - CORS Configuration
 app.use(
     cors({
         origin: "https://canteen-management-system-frontend.onrender.com",
@@ -25,6 +25,7 @@ app.use(
         allowedHeaders: ["Content-Type", "Authorization"],
     })
 );
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
