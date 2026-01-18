@@ -12,12 +12,18 @@ const USERS_FILE = 'users.json';
 if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
     console.warn("⚠️ Google OAuth disabled: missing env vars");
 } else {
+    const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+    const CALL_BACK_URL = 'https://canteen-management-system-2-b9q6.onrender.com/api/auth/google/callback';
+
+    console.log("🔵 Initializing Google Strategy");
+    console.log("   - Client ID:", GOOGLE_CLIENT_ID ? `${GOOGLE_CLIENT_ID.substring(0, 15)}...` : "MISSING");
+    console.log("   - Callback URL:", CALL_BACK_URL);
+
     passport.use(new GoogleStrategy({
-        clientID: process.env.GOOGLE_CLIENT_ID,
+        clientID: GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        // Hardcoded to fix potential env var typo (user reported doubled URL)
-        callbackURL: 'https://canteen-management-system-2-b9q6.onrender.com/api/auth/google/callback',
-        proxy: true // Force HTTPS callback generation
+        callbackURL: CALL_BACK_URL,
+        // proxy: true // Removed as we are using absolute URL
     },
         async (accessToken, refreshToken, profile, done) => {
             try {
