@@ -1,0 +1,21 @@
+{
+    "name": "canteen-management-system",
+    "version": "1.0.0",
+    "description": "Canteen Management System - Full Stack Application",
+    "main": "server/src/server.js",
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "scripts": {
+        "postinstall": "npm install --prefix server && npm install --prefix client",
+        "build": "npm run build --prefix client",
+        "start": "npm start --prefix server",
+        "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}

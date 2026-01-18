@@ -1,0 +1,29 @@
+[
+  {
+    "id": "shop_1",
+    "name": "Snack Station",
+    "image": "/snack-station.png",
+    "isOpen": true,
+    "openingTime": "08:00",
+    "closingTime": "20:00",
+    "adminId": "user_1768731757107"
+  },
+  {
+    "id": "shop_2",
+    "name": "South Indian Canteen",
+    "image": "/south-indian.png",
+    "isOpen": true,
+    "openingTime": "07:00",
+    "closingTime": "15:00",
+    "adminId": null
+  },
+  {
+    "id": "shop_3",
+    "name": "Chinese Corner",
+    "image": "/chinese-corner.png",
+    "isOpen": true,
+    "openingTime": "11:00",
+    "closingTime": "21:00",
+    "adminId": null
+  }
+]

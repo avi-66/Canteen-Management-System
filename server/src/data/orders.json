@@ -1,0 +1,225 @@
+[
+  {
+    "id": "order_17687342869360qaa9",
+    "tokenNumber": "CAFEC_180126_001",
+    "userId": "user_1768731704372",
+    "userName": "test-user",
+    "shopId": "shop_1",
+    "shopName": "Cafe Coffee Day",
+    "orderType": "DELIVERY",
+    "deliverySlot": "22:00",
+    "deliveryAddress": "302 sec a Avinash Rajput",
+    "items": [
+      {
+        "itemId": "item_1",
+        "name": "Cappuccino",
+        "price": 80,
+        "quantity": 2
+      },
+      {
+        "itemId": "item_3",
+        "name": "Chocolate Cake",
+        "price": 100,
+        "quantity": 2
+      },
+      {
+        "itemId": "item_2",
+        "name": "Sandwich",
+        "price": 60,
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 420,
+    "paymentStatus": "PAID",
+    "status": "DELIVERED",
+    "createdAt": "2026-01-18T11:04:46.936Z",
+    "updatedAt": "2026-01-18T14:03:36.671Z"
+  },
+  {
+    "id": "order_1768734382800xx1wl",
+    "tokenNumber": "CAFEC_180126_002",
+    "userId": "user_1768731704372",
+    "userName": "test-user",
+    "shopId": "shop_1",
+    "shopName": "Cafe Coffee Day",
+    "orderType": "DELIVERY",
+    "deliverySlot": "22:00",
+    "deliveryAddress": "111111111111",
+    "items": [
+      {
+        "itemId": "item_1",
+        "name": "Cappuccino",
+        "price": 80,
+        "quantity": 2
+      },
+      {
+        "itemId": "item_3",
+        "name": "Chocolate Cake",
+        "price": 100,
+        "quantity": 2
+      }
+    ],
+    "totalAmount": 360,
+    "paymentStatus": "PAID",
+    "status": "DELIVERED",
+    "createdAt": "2026-01-18T11:06:22.800Z",
+    "updatedAt": "2026-01-18T14:03:11.460Z"
+  },
+  {
+    "id": "order_17687344323484fbl7",
+    "tokenNumber": "CHINE_180126_001",
+    "userId": "user_1768731704372",
+    "userName": "test-user",
+    "shopId": "shop_3",
+    "shopName": "Chinese Corner",
+    "orderType": "DINE_IN",
+    "items": [
+      {
+        "itemId": "item_7",
+        "name": "Fried Rice",
+        "price": 70,
+        "quantity": 2
+      },
+      {
+        "itemId": "item_8",
+        "name": "Manchurian",
+        "price": 80,
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 220,
+    "paymentStatus": "NOT_REQUIRED",
+    "status": "PLACED",
+    "createdAt": "2026-01-18T11:07:12.348Z"
+  },
+  {
+    "id": "order_1768734472221lyhyq",
+    "tokenNumber": "CHINE_180126_002",
+    "userId": "user_1768731704372",
+    "userName": "test-user",
+    "shopId": "shop_3",
+    "shopName": "Chinese Corner",
+    "orderType": "DINE_IN",
+    "items": [
+      {
+        "itemId": "item_9",
+        "name": "Spring Rolls",
+        "price": 60,
+        "quantity": 1
+      },
+      {
+        "itemId": "item_8",
+        "name": "Manchurian",
+        "price": 80,
+        "quantity": 24
+      }
+    ],
+    "totalAmount": 1980,
+    "paymentStatus": "NOT_REQUIRED",
+    "status": "PLACED",
+    "createdAt": "2026-01-18T11:07:52.221Z"
+  },
+  {
+    "id": "order_1768734554827g5uxb",
+    "tokenNumber": "CHINE_180126_003",
+    "userId": "user_1768731704372",
+    "userName": "test-user",
+    "shopId": "shop_3",
+    "shopName": "Chinese Corner",
+    "orderType": "DINE_IN",
+    "items": [
+      {
+        "itemId": "item_7",
+        "name": "Fried Rice",
+        "price": 70,
+        "quantity": 1
+      }
+    ],
+    "totalAmount": 70,
+    "paymentStatus": "NOT_REQUIRED",
+    "status": "PLACED",
+    "createdAt": "2026-01-18T11:09:14.827Z"
+  },
+  {
+    "id": "order_1768742011242iqa30",
+    "tokenNumber": "CAFEC_180126_003",
+    "userId": "user_1768731704372",
+    "userName": "test-user",
+    "shopId": "shop_1",
+    "shopName": "Cafe Coffee Day",
+    "orderType": "DINE_IN",
+    "items": [
+      {
+        "itemId": "item_1",
+        "name": "Cappuccino for couples",
+        "price": 80,
+        "quantity": 1
+      },
+      {
+        "itemId": "item_3",
+        "name": "Chocolate Cake",
+        "price": 100,
+        "quantity": 2
+      },
+      {
+        "itemId": "item_2",
+        "name": "Sandwich",
+        "price": 60,
+        "quantity": 29
+      }
+    ],
+    "totalAmount": 2020,
+    "paymentStatus": "NOT_REQUIRED",
+    "status": "COMPLETED",
+    "createdAt": "2026-01-18T13:13:31.242Z",
+    "updatedAt": "2026-01-18T14:02:27.750Z"
+  },
+  {
+    "id": "order_1768745043026pdw01",
+    "tokenNumber": "CAFEC_180126_004",
+    "userId": "user_1768731704372",
+    "userName": "test-user",
+    "shopId": "shop_1",
+    "shopName": "Cafe Coffee Day",
+    "orderType": "DINE_IN",
+    "items": [
+      {
+        "itemId": "item_1",
+        "name": "Cappuccino for couples",
+        "price": 80,
+        "quantity": 5
+      }
+    ],
+    "totalAmount": 400,
+    "paymentStatus": "NOT_REQUIRED",
+    "status": "REJECTED",
+    "createdAt": "2026-01-18T14:04:03.026Z",
+    "rejectionReason": "out of stock",
+    "updatedAt": "2026-01-18T14:04:31.020Z"
+  },
+  {
+    "id": "order_1768745148620ztcgg",
+    "tokenNumber": "CAFEC_180126_005",
+    "userId": "user_1768731704372",
+    "userName": "test-user",
+    "shopId": "shop_1",
+    "shopName": "Cafe Coffee Day",
+    "orderType": "DELIVERY",
+    "deliverySlot": "22:00",
+    "deliveryAddress": "111111111111111",
+    "items": [
+      {
+        "itemId": "item_1",
+        "name": "Cappuccino for couples",
+        "price": 80,
+        "quantity": 4
+      }
+    ],
+    "totalAmount": 320,
+    "paymentStatus": "REFUNDED",
+    "status": "REJECTED",
+    "createdAt": "2026-01-18T14:05:48.620Z",
+    "rejectionReason": "ot of sotck",
+    "updatedAt": "2026-01-18T14:06:07.552Z"
+  }
+]
