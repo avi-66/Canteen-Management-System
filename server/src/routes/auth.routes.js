@@ -17,11 +17,28 @@ router.post('/register', register);
 router.post('/login', login);
 
 // ROUTE 1: GET /api/auth/google
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+// Helper: Check if Google Auth is configured
+const isGoogleAuthAvailable = () => {
+    return process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET;
+};
+
+// ROUTE 1: GET /api/auth/google
+router.get('/google', (req, res, next) => {
+    if (!isGoogleAuthAvailable()) {
+        return res.status(503).json({
+            success: false,
+            message: "Google Login is not configured. Missing GOOGLE_CLIENT_ID/SECRET."
+        });
+    }
+    passport.authenticate('google', { scope: ['profile', 'email'] })(req, res, next);
+});
 
 // ROUTE 2: GET /api/auth/google/callback
+// Helper: Get Frontend URL
+const getFrontendUrl = () => process.env.FRONTEND_URL || 'https://canteen-management-system-frontend-k4rx.onrender.com';
+
 router.get('/google/callback',
-    passport.authenticate('google', { session: false, failureRedirect: `${process.env.FRONTEND_URL}/login?error=auth_failed` }),
+    passport.authenticate('google', { session: false, failureRedirect: `${getFrontendUrl()}/login?error=auth_failed` }),
     (req, res) => {
         try {
             // Generate JWT
@@ -33,10 +50,10 @@ router.get('/google/callback',
             const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '7d' });
 
             // Redirect to frontend
-            res.redirect(`${process.env.FRONTEND_URL}?token=${token}`);
+            res.redirect(`${getFrontendUrl()}?token=${token}`);
         } catch (error) {
             console.error('Auth callback error:', error);
-            res.redirect(`${process.env.FRONTEND_URL}/login?error=server_error`);
+            res.redirect(`${getFrontendUrl()}/login?error=server_error`);
         }
     }
 );
